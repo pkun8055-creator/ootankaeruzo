@@ -7,46 +7,46 @@
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #ffffff;
       font-family: "Segoe UI", sans-serif;
+      padding: 1rem;
+      box-sizing: border-box;
     }
 
     .container {
+      width: 100%;
+      max-width: 520px;
       text-align: center;
-      padding: 2rem 3rem;
+      padding: 2rem 1.5rem;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
     }
 
     .countdown {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .time {
-      min-width: 90px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
     }
 
     .number {
-      font-size: 3rem;
+      font-size: 2.4rem;
       font-weight: bold;
     }
 
     .label {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       opacity: 0.8;
       margin-top: 0.3rem;
     }
@@ -54,15 +54,17 @@
     .links {
       margin-top: 2rem;
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .links a {
       text-decoration: none;
-      padding: 0.7rem 1.4rem;
+      padding: 0.8rem 1.6rem;
       border-radius: 999px;
       font-weight: 600;
+      font-size: 0.95rem;
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
@@ -79,6 +81,21 @@
     .links .dc {
       background: #5865f2;
       color: #ffffff;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+
+      .number {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -107,6 +124,20 @@
     <div class="links">
       <a href="https://www.youtube.com/@ぴー_マイクラ" target="_blank" class="yt">YouTube</a>
       <a href="https://discord.gg/EJm5zHZnvh" target="_blank" class="dc">Discord</a>
+    </div>
+  </div>
+      <div class="time">
+        <div class="number" id="hours">0</div>
+        <div class="label">HOURS</div>
+      </div>
+      <div class="time">
+        <div class="number" id="minutes">0</div>
+        <div class="label">MINUTES</div>
+      </div>
+      <div class="time">
+        <div class="number" id="seconds">0</div>
+        <div class="label">SECONDS</div>
+      </div>
     </div>
   </div>
 
