@@ -50,6 +50,36 @@
       opacity: 0.8;
       margin-top: 0.3rem;
     }
+
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+
+    .links a {
+      text-decoration: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .links a:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .links .yt {
+      background: #ff0000;
+      color: #ffffff;
+    }
+
+    .links .dc {
+      background: #5865f2;
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -60,6 +90,25 @@
         <div class="number" id="days">0</div>
         <div class="label">DAYS</div>
       </div>
+      <div class="time">
+        <div class="number" id="hours">0</div>
+        <div class="label">HOURS</div>
+      </div>
+      <div class="time">
+        <div class="number" id="minutes">0</div>
+        <div class="label">MINUTES</div>
+      </div>
+      <div class="time">
+        <div class="number" id="seconds">0</div>
+        <div class="label">SECONDS</div>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://www.youtube.com/@ぴー_マイクラ" target="_blank" class="yt">YouTube</a>
+      <a href="https://discord.gg/EJm5zHZnvh" target="_blank" class="dc">Discord</a>
+    </div>
+  </div>
       <div class="time">
         <div class="number" id="hours">0</div>
         <div class="label">HOURS</div>
