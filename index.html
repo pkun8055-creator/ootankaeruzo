@@ -1,155 +1,152 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026 カウントダウン</title>
+  <meta charset="UTF-8">
+  <title>ぴー のサイト集</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
   <style>
     body {
+      font-family: sans-serif;
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      font-family: "Segoe UI", sans-serif;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 520px;
+      padding: 0;
+      background: #f0f0f0;
+      color: #333;
       text-align: center;
-      padding: 2rem 1.5rem;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.08em;
+    /* ヘッダー */
+    header {
+      background: linear-gradient(135deg, #56ab2f, #a8e063); /* 緑系グラデーション */
+      color: #fff;
+      padding: 40px 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
     }
 
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+    header h1 {
+      font-size: 36px;
+      margin: 0;
     }
 
-    .number {
-      font-size: 2.4rem;
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* メイン */
+    main {
+      padding: 30px 20px;
+    }
+
+    .link-box {
+      background: #fff;
+      margin: 15px auto;
+      padding: 20px;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+
+    /* 浮き上がる効果 */
+    .link-box a {
+      display: block;
+      color: #007bff;
       font-weight: bold;
-    }
-
-    .label {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      margin-top: 0.3rem;
-    }
-
-    .links {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .links a {
+      font-size: 18px;
       text-decoration: none;
-      padding: 0.8rem 1.6rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .links a:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
+    .link-box a:hover,
+    .link-box a:focus {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
     }
 
-    .links .yt {
-      background: #ff0000;
-      color: #ffffff;
+    /* アイコンサイズ調整 */
+    .link-box i {
+      font-size: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
     }
 
-    .links .dc {
-      background: #5865f2;
-      color: #ffffff;
+    /* フッター */
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      background: #eee;
     }
 
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    /* レスポンシブ微調整 */
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.6rem;
+      .link-box {
+        max-width: 90%;
+        padding: 15px;
       }
-
-      .countdown {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+      header h1 {
+        font-size: 28px;
       }
-
-      .number {
-        font-size: 2rem;
+      header p {
+        font-size: 16px;
+      }
+      .link-box a {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>2026 COUNTDOWN</h1>
-    <div class="countdown">
-      <div class="time">
-        <div class="number" id="days">0</div>
-        <div class="label">DAYS</div>
-      </div>
-      <div class="time">
-        <div class="number" id="hours">0</div>
-        <div class="label">HOURS</div>
-      </div>
-      <div class="time">
-        <div class="number" id="minutes">0</div>
-        <div class="label">MINUTES</div>
-      </div>
-      <div class="time">
-        <div class="number" id="seconds">0</div>
-        <div class="label">SECONDS</div>
-      </div>
+
+  <header>
+    <h1>ぴー のサイト集</h1>
+    <p>制作物・リンクまとめ</p>
+  </header>
+
+  <main>
+    <div class="link-box">
+      <a href="https://discord.com/oauth2/authorize?client_id=1423901864038236221" target="_blank">
+        🤖 ぴーbot（Discord Bot）
+      </a>
     </div>
-    <div class="links">
-<a href="https://www.youtube.com/@ぴー_マイクラ" target="_blank" class="yt">YouTube</a>
-<a href="https://discord.gg/EJm5zHZnvh" target="_blank" class="dc">Discord</a>
-</div>
 
-  <script>
-    const targetDate = new Date("2026-01-01T00:00:00+09:00");
+    <div class="link-box">
+      <a href="https://pkun8055-creator.github.io/webchat.github.io/" target="_blank">
+        💬 Webチャット
+      </a>
+    </div>
 
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
+    <div class="link-box">
+      <a href="https://m.youtube.com/@%E3%81%B4%E3%83%BC_%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%A9/featured" target="_blank">
+        <i class="fab fa-youtube" style="color:#FF0000;"></i> YouTubeチャンネル
+      </a>
+    </div>
 
-      if (diff <= 0) {
-        document.querySelector(".container").innerHTML = "<h1>🎉 HAPPY NEW YEAR 2026 🎉</h1>";
-        return;
-      }
+    <div class="link-box">
+      <a href="https://discord.gg/EJm5zHZnvh" target="_blank">
+        <i class="fab fa-discord" style="color:#7289DA;"></i> Discordサーバー
+      </a>
+    </div>
+  </main>
 
-      const seconds = Math.floor(diff / 1000) % 60;
-      const minutes = Math.floor(diff / 1000 / 60) % 60;
-      const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
-      const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+  <footer>
+    <p>© 2026 ぴー</p>
+    <p><a href="terms.html">利用規約</a></p>
+  </footer>
 
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
