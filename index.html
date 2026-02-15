@@ -1,3 +1,105 @@
-<html>
-  <h1>commingsoon...</h1>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おおたんさん帰還 カウントダウン</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem 3rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .time {
+      min-width: 90px;
+    }
+
+    .number {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>2027 COUNTDOWN</h1>
+    <div class="countdown">
+      <div class="time">
+        <div class="number" id="days">0</div>
+        <div class="label">DAYS</div>
+      </div>
+      <div class="time">
+        <div class="number" id="hours">0</div>
+        <div class="label">HOURS</div>
+      </div>
+      <div class="time">
+        <div class="number" id="minutes">0</div>
+        <div class="label">MINUTES</div>
+      </div>
+      <div class="time">
+        <div class="number" id="seconds">0</div>
+        <div class="label">SECONDS</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("2026-02-18T00:00:00+09:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.querySelector(".container").innerHTML = "<h1>🎉 おおたんさんが帰ってきた!!!!! 🎉</h1>";
+        return;
+      }
+
+      const seconds = Math.floor(diff / 1000) % 60;
+      const minutes = Math.floor(diff / 1000 / 60) % 60;
+      const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
+      const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
